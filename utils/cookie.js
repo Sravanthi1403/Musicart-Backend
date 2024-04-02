@@ -5,8 +5,7 @@ const setCookie = (res, user_id, statusCode, message) => {
 
     res.status(statusCode).cookie('token' , token , { 
         httpOnly : true, 
-        maxAge : 24 * 60 * 60 * 1000,
-        sameSite : "none", 
+        maxAge : 24 * 60 * 60 * 1000, 
         secure :  true
     }).json({
         success : true,
