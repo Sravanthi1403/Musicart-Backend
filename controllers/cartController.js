@@ -3,8 +3,7 @@ const { ErrorHandler } = require('../utils/ErrorHandler');
 
 const addProductToCart = async (req, res, next) =>{
     try {
-        const { productId } = req.query;
-        const userId = req.user._id;
+        const {  productId, userId } = req.query;
 
         let cartItem = await Cart.findOne({ userId, productId });
     
@@ -59,7 +58,7 @@ const updateCartItemQuantity = async (req, res, next) => {
 
 const deleteAllItems = async (req, res, next ) => {
   try {
-    const userId = req.user._id;
+    const { userId } = req.query;
     await Cart.deleteMany({ userId });
     res.status(200).json({ message: 'Cart items deleted successfully' });
   } catch (error) {
