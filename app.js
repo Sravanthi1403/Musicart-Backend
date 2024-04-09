@@ -13,7 +13,7 @@ const cors = require("cors");
 dotenv.config({path: './.env'});
 app.use(cookieParser());
 app.use(cors({
-    origin : 'https://musicart-frontend-ftvbsgjz0-sravanthis-projects-bdbcceab.vercel.app',
+    origin : 'musicart-frontend2-1pa020xsu-sravanthis-projects-bdbcceab.vercel.app',
     methods : [ "GET","POST","PUT","PATCH", "DELETE" ],
     credentials : true,
 }));
